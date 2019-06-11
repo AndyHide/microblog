@@ -1,0 +1,117 @@
+2019-06-10 00:10:42,763 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:18:48,931 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 11:00:26,693 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 11:03:42,211 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 11:04:54,684 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 11:05:03,167 ERROR: Exception on /explore [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 129, in explore
+    return render_template('index.html', title='Explore', posts=posts)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/andy/python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/andy/python/microblog/app/templates/base.html", line 21, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/andy/python/microblog/app/templates/index.html", line 6, in block "content"
+    {{ form.hidden_tag() }}
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2019-06-10 11:06:14,368 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 11:08:39,469 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 15:59:12,857 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 15:59:25,934 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 15:59:37,297 ERROR: Exception on /index [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 30, in index
+    page, app.config['POSTS_PER_PAGE', False])
+KeyError: ('POSTS_PER_PAGE', False)
+2019-06-10 16:00:27,948 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 16:05:51,333 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 16:06:09,424 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 17:57:46,594 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-11 10:47:46,159 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 11:24:58,865 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 11:25:22,370 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 11:58:56,668 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 11:59:13,124 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 11:59:34,118 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:00:01,102 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:00:16,066 ERROR: Exception on /reset_password_request [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/app/routes.py", line 153, in reset_password_request
+    form = ResetPasswordRequestForm()
+NameError: name 'ResetPasswordRequestForm' is not defined
+2019-06-11 12:01:09,712 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:01:48,682 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:02:59,085 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:03:09,246 ERROR: Exception on /reset_password_request [POST] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/app/routes.py", line 155, in reset_password_request
+    user = User.query(email=form.email.data).first()
+TypeError: 'BaseQuery' object is not callable
+2019-06-11 12:04:17,763 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
+2019-06-11 12:05:01,289 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:47]
