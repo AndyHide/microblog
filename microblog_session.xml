@@ -2,13 +2,13 @@
 <Notepadqq>
     <View>
         <Tab filePath="/home/andy/python/microblog/app/__init__.py" cacheFilePath="" scrollX="0" scrollY="0" language="python"/>
-        <Tab filePath="/home/andy/python/microblog/app/routes.py" cacheFilePath="" scrollX="0" scrollY="892" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/app/routes.py" cacheFilePath="" scrollX="0" scrollY="2072" language="python" active="1"/>
         <Tab filePath="/home/andy/python/microblog/microblog.py" cacheFilePath="" scrollX="0" scrollY="0" language="python"/>
-        <Tab filePath="/home/andy/python/microblog/config.py" cacheFilePath="" scrollX="0" scrollY="0" language="python" active="1"/>
-        <Tab filePath="/home/andy/python/microblog/app/models.py" cacheFilePath="" scrollX="0" scrollY="356" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/config.py" cacheFilePath="" scrollX="0" scrollY="0" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/app/models.py" cacheFilePath="" scrollX="0" scrollY="718" language="python"/>
         <Tab filePath="/home/andy/python/microblog/app/templates/index.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
-        <Tab filePath="/home/andy/python/microblog/app/templates/base.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
-        <Tab filePath="/home/andy/python/microblog/app/forms.py" cacheFilePath="" scrollX="0" scrollY="112" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/app/templates/base.html" cacheFilePath="" scrollX="0" scrollY="127" language="html"/>
+        <Tab filePath="/home/andy/python/microblog/app/forms.py" cacheFilePath="" scrollX="0" scrollY="239" language="python"/>
         <Tab filePath="/home/andy/python/microblog/app/templates/login.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
         <Tab filePath="/home/andy/python/microblog/app/templates/register.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
         <Tab filePath="/home/andy/python/microblog/app/templates/user.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
@@ -18,5 +18,10 @@
         <Tab filePath="/home/andy/python/microblog/app/templates/404.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
         <Tab filePath="/home/andy/python/microblog/app/templates/500.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
         <Tab filePath="/home/andy/python/microblog/tests.py" cacheFilePath="" scrollX="0" scrollY="0" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/app/email.py" cacheFilePath="" scrollX="0" scrollY="0" language="python"/>
+        <Tab filePath="/home/andy/python/microblog/app/templates/reset_password_request.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
+        <Tab filePath="/home/andy/python/microblog/app/templates/email/reset_password.txt" cacheFilePath="" scrollX="0" scrollY="0" language="plaintext"/>
+        <Tab filePath="/home/andy/python/microblog/app/templates/email/reset_password.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
+        <Tab filePath="/home/andy/python/microblog/app/templates/reset_password.html" cacheFilePath="" scrollX="0" scrollY="0" language="html"/>
     </View>
 </Notepadqq>

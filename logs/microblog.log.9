@@ -1,0 +1,132 @@
+2019-06-09 23:07:39,375 ERROR: Exception on /edit_profile [POST] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 89, in edit_profile
+    db.session.commit()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2458, in flush
+    self._flush(objects)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2596, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2556, in _flush
+    flush_context.execute()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 978, in _emit_update_statements
+    statement, multiparams
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('Kiri', 'VALERA', 2)]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2019-06-09 23:13:41,355 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:13:45,187 ERROR: Exception on /edit_profile [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 85, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/andy/python/microblog/app/forms.py", line 39, in __init__
+    self.original_username = original_username
+NameError: name 'original_username' is not defined
+2019-06-09 23:13:49,032 ERROR: Exception on /edit_profile [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 85, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/andy/python/microblog/app/forms.py", line 39, in __init__
+    self.original_username = original_username
+NameError: name 'original_username' is not defined
+2019-06-09 23:14:41,828 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:08,503 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:22,723 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:28,842 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:58:39,239 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:00:31,020 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:27,866 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:30,996 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:33,318 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:07:47,160 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
