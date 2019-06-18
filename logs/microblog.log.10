@@ -1,5 +1,4 @@
-2019-06-09 23:06:29,783 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
-2019-06-09 23:07:16,333 ERROR: Exception on /edit_profile [POST] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-09 23:07:39,375 ERROR: Exception on /edit_profile [POST] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
     cursor, statement, parameters, context
@@ -74,3 +73,60 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 [SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
 [parameters: ('Kiri', 'VALERA', 2)]
 (Background on this error at: http://sqlalche.me/e/gkpj)
+2019-06-09 23:13:41,355 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:13:45,187 ERROR: Exception on /edit_profile [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 85, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/andy/python/microblog/app/forms.py", line 39, in __init__
+    self.original_username = original_username
+NameError: name 'original_username' is not defined
+2019-06-09 23:13:49,032 ERROR: Exception on /edit_profile [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/andy/python/microblog/app/routes.py", line 85, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/andy/python/microblog/app/forms.py", line 39, in __init__
+    self.original_username = original_username
+NameError: name 'original_username' is not defined
+2019-06-09 23:14:41,828 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:08,503 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:22,723 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:42:28,842 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-09 23:58:39,239 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:00:31,020 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:27,866 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:30,996 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:01:33,318 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
+2019-06-10 00:07:47,160 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:45]
