@@ -6,7 +6,7 @@ from flask_babel import _, get_locale
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, IngredientForm
-from app.models import User, Post, Ingredient
+from app.models import User, Post, Ingredient, Recipe
 from app.email import send_password_reset_email
 
 
@@ -210,4 +210,19 @@ def ingredients():
         if ingredients.has_prev else None
     return render_template('ingredients.html', title=_('Ingredients'),form=form,
                            ingredients=ingredients.items, next_url=next_url,
+                           prev_url=prev_url)
+
+
+@app.route('/recipes')
+@login_required
+def recipes():
+    page = request.args.get('page', 1, type=int)
+    recipes = Recipe.query.order_by(Recipe.name).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('recipes', page=recipes.next_num) \
+        if recipes.has_next else None
+    prev_url = url_for('recipes', page=recipes.prev_num) \
+        if recipes.has_prev else None
+    return render_template('recipes.html', title=_('Recipes'),
+                           recipes=recipes.items, next_url=next_url,
                            prev_url=prev_url)

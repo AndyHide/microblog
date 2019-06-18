@@ -12,10 +12,23 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+ingredients_list = db.Table(
+    'ingredients_list',
+    db.Column('recipe_id', db.Integer, db.ForeignKey('recipe.id')),
+    db.Column('ingredient_id', db.Integer, db.ForeignKey('ingredient.id'))
+)
+
+
+class Recipe(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), index=True, unique=True)
+    ingredients = db.relationship('Ingredient', secondary='ingredients_list', backref=db.backref('used_in', lazy='dynamic'))
+
 
 class Ingredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
+    # backref used_in
 
 
 class User(UserMixin, db.Model):
