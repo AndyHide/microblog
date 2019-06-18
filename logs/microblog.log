@@ -84,3 +84,36 @@ AttributeError: 'SQLAlchemy' object has no attribute 'commit'
 2019-06-18 16:56:19,731 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
 2019-06-18 16:57:40,848 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
 2019-06-18 16:58:55,766 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 17:13:19,076 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-18 17:13:30,091 ERROR: Exception on /ingredients [POST] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 200, in ingredients
+    if form.validate_on_submit():
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\wtforms\form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\wtforms\form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\wtforms\fields\core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "C:\Python\git\microblog\app\forms.py", line 78, in validate_name
+    ingredient = Ingredient.query.filter_by(name=name.data).first()
+NameError: name 'Ingredient' is not defined
+2019-06-18 17:13:53,045 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

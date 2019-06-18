@@ -5,7 +5,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, \
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
     Length
 
-from app.models import User
+from app.models import User, Ingredient, Recipe
 
 
 class LoginForm(FlaskForm):
@@ -71,9 +71,20 @@ class PostForm(FlaskForm):
 
 
 class IngredientForm(FlaskForm):
-    ingredient = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
+    name = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
+    def validate_name(self, name):
+        ingredient = Ingredient.query.filter_by(name=name.data).first()
+        if ingredient is not None:
+            raise ValidationError(_('This ingredient is already present.'))
+
+
 class RecipeForm(FlaskForm):
-    recipe = StringField(_l('Here you can add new recipe'), validators=[DataRequired()])
+    name = StringField(_l('Here you can add new recipe'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
+
+    def validate_name(self, name):
+        recipe = Recipe.query.filter_by(name=name.data).first()
+        if recipe is not None:
+            raise ValidationError(_('This recipe is already present.'))

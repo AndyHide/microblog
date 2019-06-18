@@ -198,7 +198,7 @@ def unfollow(username):
 def ingredients():
     form = IngredientForm()
     if form.validate_on_submit():
-        ingredient = Ingredient(name=form.ingredient.data)
+        ingredient = Ingredient(name=form.name.data)
         db.session.add(ingredient)
         db.session.commit()
         flash(_('Your ingredient added!'))
@@ -220,7 +220,7 @@ def ingredients():
 def recipes():
     form = RecipeForm()
     if form.validate_on_submit():
-        recipe = Recipe(name=form.recipe.data)
+        recipe = Recipe(name=form.name.data)
         db.session.add(recipe)
         db.session.commit()
         flash(_('Your recipe added!'))
