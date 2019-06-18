@@ -237,10 +237,24 @@ def recipes():
                            prev_url=prev_url)
 
 
-@app.route('/recipe/<name>')
+@app.route('/recipe/<name>', methods=['GET', 'POST'])
 @login_required
 def recipe(name):
     recipe = Recipe.query.filter_by(name=name).first_or_404()
+    form = IngredientForm()
+    if form.validate_on_submit():
+        ingredient = Ingredient.query.filter_by(name=form.ingredient.data).first()
+        if ingredient is None:
+            flash(_('Ingredient not found'))
+            return redirect(url_for('recipe', name=name))
+        if ingredient in recipe.find_ingredients():
+            flash(_('Ingredient already in this recipe'))
+            return redirect(url_for('recipe', name=name))
+        else:
+            recipe.ingredients.append(ingredient)
+            db.session.commit()
+            flash(_('Ingredient added!'))
+            return redirect(url_for('recipe', name=name))
     page = request.args.get('page', 1, type=int)
     ingredients = recipe.find_ingredients().paginate(
         page, app.config['POSTS_PER_PAGE'], False)
@@ -248,5 +262,5 @@ def recipe(name):
         if ingredients.has_next else None
     prev_url = url_for('recipe', name=recipe.name, page=ingredients.prev_num) \
         if ingredients.has_prev else None
-    return render_template('recipe.html', recipe=recipe, ingredients=ingredients.items,
+    return render_template('recipe.html', form=form, recipe=recipe, ingredients=ingredients.items,
                            next_url=next_url, prev_url=prev_url)

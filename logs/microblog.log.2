@@ -1,4 +1,4 @@
-2019-06-18 13:49:35,954 ERROR: Exception on /recipe/Omlette [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-18 14:40:57,863 ERROR: Exception on /recipes [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,20 +14,25 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 236, in recipe
-    ingredients = recipe.ingredients.order_by(name).paginate(
-AttributeError: 'InstrumentedList' object has no attribute 'order_by'
-2019-06-18 13:58:41,680 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:58:44,729 ERROR: Exception on /recipe/Omlette [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: ingredient.id
-
-The above exception was the direct cause of the following exception:
-
+  File "C:\Python\git\microblog\app\routes.py", line 237, in recipes
+    prev_url=prev_url)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: recipes.html
+2019-06-18 14:47:49,174 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 14:47:53,482 ERROR: Exception on /recipes [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -43,47 +48,45 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 237, in recipe
-    page, app.config['POSTS_PER_PAGE'], False)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
-    items = self.limit(per_page).offset((page - 1) * per_page).all()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3167, in all
-    return list(self)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3323, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3348, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+  File "C:\Python\git\microblog\app\routes.py", line 237, in recipes
+    prev_url=prev_url)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: ingredient.id
-[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
-FROM post JOIN ingredients_list ON ingredients_list.ingredient_id = ingredient.id 
-WHERE ingredients_list.recipe_id = ? ORDER BY ingredient.name
- LIMIT ? OFFSET ?]
-[parameters: (2, 10, 0)]
-(Background on this error at: http://sqlalche.me/e/e3q8)
-2019-06-18 13:59:34,220 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 14:00:06,285 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 14:03:36,068 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 14:37:33,992 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 14:40:26,946 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 14:40:35,549 ERROR: Exception on /recipes [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+  File "C:\Python\git\microblog\app\templates\recipes.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Python\git\microblog\app\templates\base.html", line 49, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Python\git\microblog\app\templates\recipes.html", line 7, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2019-06-18 14:48:22,344 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 14:48:25,239 ERROR: Exception on /recipes [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,7 +102,38 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 221, in recipes
-    form = RecipeForm()
-NameError: name 'RecipeForm' is not defined
-2019-06-18 14:40:55,622 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+  File "C:\Python\git\microblog\app\routes.py", line 237, in recipes
+    prev_url=prev_url)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python\git\microblog\app\templates\recipes.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Python\git\microblog\app\templates\base.html", line 49, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Python\git\microblog\app\templates\recipes.html", line 11, in block "app_content"
+    {% include '_recipe.html' %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: _recipe.html
