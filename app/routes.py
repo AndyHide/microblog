@@ -224,7 +224,7 @@ def recipes():
         db.session.add(recipe)
         db.session.commit()
         flash(_('Your recipe added!'))
-        return redirect(url_for('recipes'))
+        return redirect(url_for('recipe', name=recipe.name))
     page = request.args.get('page', 1, type=int)
     recipes = Recipe.query.order_by(Recipe.name).paginate(
         page, app.config['POSTS_PER_PAGE'], False)

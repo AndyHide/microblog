@@ -19,3 +19,4 @@ Traceback (most recent call last):
 AttributeError: 'IngredientForm' object has no attribute 'ingredient'
 2019-06-18 17:32:33,877 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
 2019-06-18 17:34:32,761 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-18 17:54:08,191 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
