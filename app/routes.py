@@ -8,7 +8,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.email import send_password_reset_email
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm, IngredientForm
+    ResetPasswordRequestForm, ResetPasswordForm, IngredientForm, RecipeForm
 from app.models import User, Post, Ingredient, Recipe
 
 
@@ -215,9 +215,16 @@ def ingredients():
                            prev_url=prev_url)
 
 
-@app.route('/recipes')
+@app.route('/recipes', methods=['GET', 'POST'])
 @login_required
 def recipes():
+    form = RecipeForm()
+    if form.validate_on_submit():
+        recipe = Recipe(name=form.recipe.data)
+        db.session.add(recipe)
+        db.session.commit()
+        flash(_('Your recipe added!'))
+        return redirect(url_for('recipes'))
     page = request.args.get('page', 1, type=int)
     recipes = Recipe.query.order_by(Recipe.name).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
@@ -225,7 +232,7 @@ def recipes():
         if recipes.has_next else None
     prev_url = url_for('recipes', page=recipes.prev_num) \
         if recipes.has_prev else None
-    return render_template('recipes.html', title=_('Recipes'),
+    return render_template('recipes.html', title=_('Recipes'), form=form,
                            recipes=recipes.items, next_url=next_url,
                            prev_url=prev_url)
 

@@ -1,4 +1,4 @@
-2019-06-11 18:08:18,525 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-13 11:24:43,595 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
@@ -56,8 +56,7 @@ Traceback (most recent call last):
   File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Block names in Jinja have to be valid Python identifiers and may not contain hyphens, use an underscore instead.
-2019-06-13 11:23:08,932 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 11:23:16,577 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-13 11:24:46,048 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()

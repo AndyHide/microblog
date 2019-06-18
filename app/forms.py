@@ -73,3 +73,7 @@ class PostForm(FlaskForm):
 class IngredientForm(FlaskForm):
     ingredient = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
+
+class RecipeForm(FlaskForm):
+    recipe = StringField(_l('Here you can add new recipe'), validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))

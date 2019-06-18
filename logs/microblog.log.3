@@ -1,44 +1,4 @@
-2019-06-13 12:14:18,269 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
-2019-06-17 12:57:18,655 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 15:59:51,176 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 15:59:58,748 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:03:15,589 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:04:47,007 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:07:16,046 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:08:03,147 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:08:24,570 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:09:38,751 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:10:02,906 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:11:05,543 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:27:20,660 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:28:15,694 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:28:24,705 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:28:36,915 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:28:45,107 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:28:53,218 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:29:38,343 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:34:35,479 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:34:42,997 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:36:21,287 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:36:28,906 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:40:10,983 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:40:28,026 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:40:41,972 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:41:47,824 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:41:57,986 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:42:06,225 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-17 16:43:12,410 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:53:19,993 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:53:38,088 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: ingredient
-
-The above exception was the direct cause of the following exception:
-
+2019-06-18 11:57:57,825 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,41 +14,70 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
-    ingredients = Ingredient.query.all().paginate(
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3167, in all
-    return list(self)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3323, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3348, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+  File "C:\Python\git\microblog\app\routes.py", line 213, in ingredients
+    prev_url=prev_url)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: ingredient
-[SQL: SELECT ingredient.id AS ingredient_id, ingredient.name AS ingredient_name 
-FROM ingredient]
-(Background on this error at: http://sqlalche.me/e/e3q8)
-2019-06-18 10:54:03,612 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:57:32,084 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:57:43,396 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:58:22,603 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 10:58:26,635 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+  File "C:\Python\git\microblog\app\templates\ingredients.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Python\git\microblog\app\templates\base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Python\git\microblog\app\templates\ingredients.html", line 7, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2019-06-18 11:59:33,353 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:00:20,782 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:02:05,485 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:02:36,307 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:34:59,162 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:40:45,119 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:40:52,723 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:41:00,197 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:41:07,342 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:41:15,023 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 12:43:05,986 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:03:27,045 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:03:34,931 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:03:55,677 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:06:05,963 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:06:14,701 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:07:08,946 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:07:14,199 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:07:19,205 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:07:25,778 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:08:08,759 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:08:13,586 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:13:58,901 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:14:02,545 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:21:34,975 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:46:19,535 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:46:38,820 ERROR: Exception on /recipe/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,10 +93,12 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
-    ingredients = Ingredient.query.all().paginate(
-AttributeError: 'list' object has no attribute 'paginate'
-2019-06-18 10:58:28,424 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+  File "C:\Python\git\microblog\app\routes.py", line 236, in recipe
+    ingredients = recipe.ingredients.order_by(name).paginate(
+AttributeError: 'InstrumentedList' object has no attribute 'order_by'
+2019-06-18 13:48:50,092 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:49:06,875 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 13:49:24,255 ERROR: Exception on /recipe/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -123,7 +114,6 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
-    ingredients = Ingredient.query.all().paginate(
-AttributeError: 'list' object has no attribute 'paginate'
-2019-06-18 11:00:46,635 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+  File "C:\Python\git\microblog\app\routes.py", line 236, in recipe
+    ingredients = recipe.ingredients.order_by(name).paginate(
+AttributeError: 'InstrumentedList' object has no attribute 'order_by'
