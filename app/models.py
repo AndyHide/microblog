@@ -96,16 +96,16 @@ class User(UserMixin, db.Model):
     @staticmethod
     def verify_reset_password_token(token):
         try:
-            id = jwt.decode(token, app.config['SECRET_KEY'],
-                            algorithms=['HS256'])['reset_password']
+            jwt_id = jwt.decode(token, app.config['SECRET_KEY'],
+                                algorithms=['HS256'])['reset_password']
         except:
             return
-        return User.query.get(id)
+        return User.query.get(jwt_id)
 
 
 @login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+def load_user(loader_id):
+    return User.query.get(int(loader_id))
 
 
 class Post(db.Model):

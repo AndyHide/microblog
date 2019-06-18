@@ -80,6 +80,11 @@ class IngredientForm(FlaskForm):
             raise ValidationError(_('This ingredient is already present.'))
 
 
+class IngredientInRecipeForm(FlaskForm):
+    name = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))
+
+
 class RecipeForm(FlaskForm):
     name = StringField(_l('Here you can add new recipe'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))

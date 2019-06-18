@@ -8,7 +8,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.email import send_password_reset_email
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm, IngredientForm, RecipeForm
+    ResetPasswordRequestForm, ResetPasswordForm, IngredientForm, RecipeForm, IngredientInRecipeForm
 from app.models import User, Post, Ingredient, Recipe
 
 
@@ -241,14 +241,14 @@ def recipes():
 @login_required
 def recipe(name):
     recipe = Recipe.query.filter_by(name=name).first_or_404()
-    form = IngredientForm()
+    form = IngredientInRecipeForm()
     if form.validate_on_submit():
-        ingredient = Ingredient.query.filter_by(name=form.ingredient.data).first()
+        ingredient = Ingredient.query.filter_by(name=form.name.data).first()
         if ingredient is None:
-            flash(_('Ingredient not found'))
+            flash(_('Ingredient is not found'))
             return redirect(url_for('recipe', name=name))
         if ingredient in recipe.find_ingredients():
-            flash(_('Ingredient already in this recipe'))
+            flash(_('Ingredient is already in this recipe'))
             return redirect(url_for('recipe', name=name))
         else:
             recipe.ingredients.append(ingredient)
