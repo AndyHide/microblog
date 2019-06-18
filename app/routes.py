@@ -1,13 +1,15 @@
 from datetime import datetime
+
 from flask import render_template, flash, redirect, url_for, request, g
+from flask_babel import _, get_locale
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
-from flask_babel import _, get_locale
+
 from app import app, db
+from app.email import send_password_reset_email
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, IngredientForm
 from app.models import User, Post, Ingredient, Recipe
-from app.email import send_password_reset_email
 
 
 @app.before_request
@@ -208,7 +210,7 @@ def ingredients():
         if ingredients.has_next else None
     prev_url = url_for('ingredients', page=ingredients.prev_num) \
         if ingredients.has_prev else None
-    return render_template('ingredients.html', title=_('Ingredients'),form=form,
+    return render_template('ingredients.html', title=_('Ingredients'), form=form,
                            ingredients=ingredients.items, next_url=next_url,
                            prev_url=prev_url)
 

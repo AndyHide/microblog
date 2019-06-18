@@ -1,9 +1,11 @@
 from datetime import datetime
 from hashlib import md5
 from time import time
+
+import jwt
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
+
 from app import app, db, login
 
 followers = db.Table(
@@ -22,7 +24,9 @@ ingredients_list = db.Table(
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
-    ingredients = db.relationship('Ingredient', secondary='ingredients_list', backref=db.backref('used_in', lazy='dynamic'))
+    ingredients = db.relationship('Ingredient', secondary='ingredients_list',
+                                  backref=db.backref('used_in', lazy='dynamic'))
+
     def find_ingredients(self):
         ingredients = Ingredient.query.join(
             ingredients_list, (ingredients_list.c.ingredient_id == Ingredient.id)).filter(
