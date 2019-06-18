@@ -226,3 +226,18 @@ def recipes():
     return render_template('recipes.html', title=_('Recipes'),
                            recipes=recipes.items, next_url=next_url,
                            prev_url=prev_url)
+
+
+@app.route('/recipe/<name>')
+@login_required
+def recipe(name):
+    recipe = Recipe.query.filter_by(name=name).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    ingredients = recipe.find_ingredients().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('recipe', name=recipe.name, page=ingredients.next_num) \
+        if ingredients.has_next else None
+    prev_url = url_for('recipe', name=recipe.name, page=ingredients.prev_num) \
+        if ingredients.has_prev else None
+    return render_template('recipe.html', recipe=recipe, ingredients=ingredients.items,
+                           next_url=next_url, prev_url=prev_url)

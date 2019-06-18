@@ -23,6 +23,12 @@ class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     ingredients = db.relationship('Ingredient', secondary='ingredients_list', backref=db.backref('used_in', lazy='dynamic'))
+    def find_ingredients(self):
+        ingredients = Ingredient.query.join(
+            ingredients_list, (ingredients_list.c.ingredient_id == Ingredient.id)).filter(
+            ingredients_list.c.recipe_id == self.id)
+
+        return ingredients.order_by(Ingredient.name)
 
 
 class Ingredient(db.Model):
