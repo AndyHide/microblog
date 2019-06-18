@@ -1,126 +1,129 @@
-2019-06-13 11:25:48,888 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-13 12:14:18,269 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
+2019-06-17 12:57:18,655 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 15:59:51,176 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 15:59:58,748 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:03:15,589 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:04:47,007 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:07:16,046 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:08:03,147 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:08:24,570 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:09:38,751 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:10:02,906 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:11:05,543 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:27:20,660 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:28:15,694 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:28:24,705 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:28:36,915 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:28:45,107 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:28:53,218 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:29:38,343 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:34:35,479 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:34:42,997 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:36:21,287 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:36:28,906 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:40:10,983 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:40:28,026 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:40:41,972 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:41:47,824 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:41:57,986 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:42:06,225 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-17 16:43:12,410 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:53:19,993 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:53:38,088 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1810, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1793, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1786, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: ingredient
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1732, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1661, in handle_http_exception
-    return handler(e)
-  File "/home/andy/python/microblog/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/andy/python/microblog/app/templates/404.html", line 3, in template
-    {% block app-content %}
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 264, in parse_block
-    self.fail('Block names in Jinja have to be valid Python '
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Block names in Jinja have to be valid Python identifiers and may not contain hyphens, use an underscore instead.
-2019-06-13 11:26:30,097 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 11:26:34,362 ERROR: Exception on /favicon.ico [GET] [in /home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
-Traceback (most recent call last):
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1810, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1793, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1786, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1732, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1661, in handle_http_exception
-    return handler(e)
-  File "/home/andy/python/microblog/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
+    ingredients = Ingredient.query.all().paginate(
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3167, in all
+    return list(self)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3323, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3348, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
     raise value.with_traceback(tb)
-  File "/home/andy/python/microblog/app/templates/404.html", line 3, in template
-    {% block app-content %}
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 264, in parse_block
-    self.fail('Block names in Jinja have to be valid Python '
-  File "/home/andy/python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Block names in Jinja have to be valid Python identifiers and may not contain hyphens, use an underscore instead.
-2019-06-13 11:28:43,894 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 11:29:29,471 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 11:30:04,566 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 11:34:38,096 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:51]
-2019-06-13 12:11:06,983 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
-2019-06-13 12:11:33,808 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
-2019-06-13 12:12:35,035 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
-2019-06-13 12:12:41,411 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
-2019-06-13 12:12:46,496 INFO: Microblog startup [in /home/andy/python/microblog/app/__init__.py:52]
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: ingredient
+[SQL: SELECT ingredient.id AS ingredient_id, ingredient.name AS ingredient_name 
+FROM ingredient]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-06-18 10:54:03,612 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:57:32,084 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:57:43,396 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:58:22,603 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
+2019-06-18 10:58:26,635 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
+    ingredients = Ingredient.query.all().paginate(
+AttributeError: 'list' object has no attribute 'paginate'
+2019-06-18 10:58:28,424 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 198, in ingredients
+    ingredients = Ingredient.query.all().paginate(
+AttributeError: 'list' object has no attribute 'paginate'
+2019-06-18 11:00:46,635 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]

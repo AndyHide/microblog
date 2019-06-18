@@ -4,6 +4,8 @@
 {% block app_content %}
     <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
     <br>
+    {{ wtf.quick_form(form) }}
+    <br>
     <h1>{{ _('Here is the list of all ingredients in this base:') }}</h1>
     {% for ingredient in ingredients %}
         {% include '_ingredient.html' %}

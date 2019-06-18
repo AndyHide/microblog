@@ -5,7 +5,7 @@ from werkzeug.urls import url_parse
 from flask_babel import _, get_locale
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm
+    ResetPasswordRequestForm, ResetPasswordForm, IngredientForm
 from app.models import User, Post, Ingredient
 from app.email import send_password_reset_email
 
@@ -191,16 +191,23 @@ def unfollow(username):
     return redirect(url_for('user', username=username))
 
 
-@app.route('/ingredients')
+@app.route('/ingredients', methods=['GET', 'POST'])
 @login_required
 def ingredients():
+    form = IngredientForm()
+    if form.validate_on_submit():
+        ingredient = Ingredient(name=form.ingredient.data)
+        db.session.add(ingredient)
+        db.session.commit()
+        flash(_('Your ingredient added!'))
+        return redirect(url_for('ingredients'))
     page = request.args.get('page', 1, type=int)
-    ingredients = Ingredient.query.order_by(Ingredient.id).paginate(
+    ingredients = Ingredient.query.order_by(Ingredient.name).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('explore', page=ingredients.next_num) \
+    next_url = url_for('ingredients', page=ingredients.next_num) \
         if ingredients.has_next else None
-    prev_url = url_for('explore', page=ingredients.prev_num) \
+    prev_url = url_for('ingredients', page=ingredients.prev_num) \
         if ingredients.has_prev else None
-    return render_template('ingredients.html', title=_('Ingredients'),
+    return render_template('ingredients.html', title=_('Ingredients'),form=form,
                            ingredients=ingredients.items, next_url=next_url,
                            prev_url=prev_url)
