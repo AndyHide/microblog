@@ -109,3 +109,4 @@ WHERE "RecipeIngredients".recipe_id = ? ORDER BY ingredient.name
 2019-06-19 13:53:44,308 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
 2019-06-19 14:10:00,915 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
 2019-06-19 14:11:06,501 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 15:06:58,697 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
