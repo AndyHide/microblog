@@ -14,8 +14,8 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
-ingredients_list = db.Table(
-    'ingredients_list',
+RecipeIngredients = db.Table(
+    'RecipeIngredients',
     db.Column('recipe_id', db.Integer, db.ForeignKey('recipe.id')),
     db.Column('ingredient_id', db.Integer, db.ForeignKey('ingredient.id'))
 )
@@ -24,13 +24,13 @@ ingredients_list = db.Table(
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
-    ingredients = db.relationship('Ingredient', secondary='ingredients_list',
+    ingredients = db.relationship('Ingredient', secondary='RecipeIngredients',
                                   backref=db.backref('used_in', lazy='dynamic'))
 
     def find_ingredients(self):
         ingredients = Ingredient.query.join(
-            ingredients_list, (ingredients_list.c.ingredient_id == Ingredient.id)).filter(
-            ingredients_list.c.recipe_id == self.id)
+            RecipeIngredients, (RecipeIngredients.c.ingredient_id == Ingredient.id)).filter(
+            RecipeIngredients.c.recipe_id == self.id)
 
         return ingredients.order_by(Ingredient.name)
 
@@ -39,6 +39,13 @@ class Ingredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     # backref used_in
+
+    def find_recipes(self):
+        recipes = Recipe.query.join(
+            RecipeIngredients, (RecipeIngredients.c.recipe_id == Recipe.id)).filter(
+            RecipeIngredients.c.ingredient_id == self.id)
+
+        return recipes.order_by(Recipe.name)
 
 
 class User(UserMixin, db.Model):

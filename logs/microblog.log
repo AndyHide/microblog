@@ -20,3 +20,90 @@ AttributeError: 'IngredientForm' object has no attribute 'ingredient'
 2019-06-18 17:32:33,877 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
 2019-06-18 17:34:32,761 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
 2019-06-18 17:54:08,191 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:30:45,342 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:31:02,513 ERROR: Exception on /ingredient/Apple [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 274, in ingredient
+    recipes = ingredient.find_recipes().paginate(
+AttributeError: 'Ingredient' object has no attribute 'find_recipes'
+2019-06-19 13:32:28,310 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:39:10,617 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:39:40,652 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:52:11,396 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:52:21,179 ERROR: Exception on /recipe/Fried egg [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: RecipeIngredients
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 260, in recipe
+    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3167, in all
+    return list(self)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3323, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\query.py", line 3348, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: RecipeIngredients
+[SQL: SELECT ingredient.id AS ingredient_id, ingredient.name AS ingredient_name 
+FROM ingredient JOIN "RecipeIngredients" ON "RecipeIngredients".ingredient_id = ingredient.id 
+WHERE "RecipeIngredients".recipe_id = ? ORDER BY ingredient.name
+ LIMIT ? OFFSET ?]
+[parameters: (1, 10, 0)]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-06-19 13:53:06,101 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:53:20,336 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-19 13:53:44,308 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

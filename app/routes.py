@@ -264,3 +264,18 @@ def recipe(name):
         if ingredients.has_prev else None
     return render_template('recipe.html', form=form, recipe=recipe, ingredients=ingredients.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@app.route('/ingredient/<name>')
+@login_required
+def ingredient(name):
+    ingredient = Ingredient.query.filter_by(name=name).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    recipes = ingredient.find_recipes().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('ingredient', name=ingredient.name, page=recipes.next_num) \
+        if recipes.has_next else None
+    prev_url = url_for('ingredient', name=ingredient.name, page=recipes.prev_num) \
+        if recipes.has_prev else None
+    return render_template('ingredient.html', ingredient=ingredient, recipes=recipes.items,
+                           next_url=next_url, prev_url=prev_url)
