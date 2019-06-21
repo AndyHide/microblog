@@ -1,4 +1,4 @@
-2019-06-18 11:57:57,825 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-21 15:22:27,688 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,7 +14,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 213, in ingredients
+  File "C:\Python\git\microblog\app\routes.py", line 215, in ingredients
     prev_url=prev_url)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
@@ -28,6 +28,10 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
+  File "C:\Python\git\microblog\app\templates\_ingredient.html", line 7, in template
+    <a href="{% if recipe is not None %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
   File "C:\Python\git\microblog\app\templates\ingredients.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
@@ -40,80 +44,43 @@ Traceback (most recent call last):
     {% block body -%}
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
     {% block content -%}
-  File "C:\Python\git\microblog\app\templates\base.html", line 48, in block "content"
+  File "C:\Python\git\microblog\app\templates\base.html", line 50, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Python\git\microblog\app\templates\ingredients.html", line 7, in block "app_content"
-    {{ wtf.quick_form(form) }}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
-    rv = self._func(*arguments)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
-    {{ form.hidden_tag() }}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2019-06-18 11:59:33,353 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:00:20,782 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:02:05,485 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:02:36,307 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:34:59,162 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:40:45,119 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:40:52,723 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:41:00,197 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:41:07,342 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:41:15,023 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 12:43:05,986 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:03:27,045 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:03:34,931 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:03:55,677 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:06:05,963 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:06:14,701 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:07:08,946 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:07:14,199 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:07:19,205 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:07:25,778 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:08:08,759 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:08:13,586 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:13:58,901 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:14:02,545 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:21:34,975 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:46:19,535 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:46:38,820 ERROR: Exception on /recipe/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+  File "C:\Python\git\microblog\app\templates\ingredients.html", line 12, in block "app_content"
+    {% include '_ingredient.html' %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 236, in recipe
-    ingredients = recipe.ingredients.order_by(name).paginate(
-AttributeError: 'InstrumentedList' object has no attribute 'order_by'
-2019-06-18 13:48:50,092 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:49:06,875 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:52]
-2019-06-18 13:49:24,255 ERROR: Exception on /recipe/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 236, in recipe
-    ingredients = recipe.ingredients.order_by(name).paginate(
-AttributeError: 'InstrumentedList' object has no attribute 'order_by'
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python\git\microblog\app\templates\_ingredient.html", line 7, in template
+    <a href="{% if recipe is not None %}
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 82, in generate
+    generator.visit(node)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 754, in visit_Template
+    self.blockvisit(node.body, frame)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 378, in blockvisit
+    self.visit(node, frame)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 1157, in visit_If
+    self.visit(node.test, if_frame)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
+    return f(self, node, frame, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 1497, in visitor
+    self.visit(node.node, frame)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
+    return f(self, node, frame, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 1607, in visit_Test
+    self.fail('no test named %r' % node.name, node.lineno)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: no test named 'None'
+2019-06-21 15:23:38,191 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

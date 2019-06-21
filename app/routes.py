@@ -9,7 +9,7 @@ from app import app, db
 from app.email import send_password_reset_email
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, IngredientForm, RecipeForm, IngredientInRecipeForm
-from app.models import User, Post, Ingredient, Recipe
+from app.models import User, Post, Ingredient, Recipe, RecipeIngredients
 
 
 @app.before_request
@@ -266,6 +266,16 @@ def recipe(name):
                            next_url=next_url, prev_url=prev_url)
 
 
+@app.route('/delete_recipe/<name>', methods=['GET', 'POST'])
+@login_required
+def delete_recipe(name):
+    recipe = Recipe.query.filter_by(name=name).first()
+    db.session.delete(recipe)
+    db.session.commit()
+    flash(_('Recipe was deleted'))
+    return redirect(url_for('recipes'))
+
+
 @app.route('/ingredient/<name>')
 @login_required
 def ingredient(name):
@@ -279,3 +289,25 @@ def ingredient(name):
         if recipes.has_prev else None
     return render_template('ingredient.html', ingredient=ingredient, recipes=recipes.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@app.route('/delete_ingredient/<ingredient>')
+@login_required
+def delete_ingredient(ingredient):
+    target_ingredient = Ingredient.query.filter_by(name=ingredient).first_or_404()
+    db.session.delete(target_ingredient)
+    db.session.commit()
+    flash(_('Ingredient deleted'))
+    return redirect(url_for('ingredients'))
+
+
+@app.route('/delete_ingredient_from_recipe/<ingredient>/<recipe>')
+@login_required
+def delete_ingredient_from_recipe(ingredient, recipe):
+    target_recipe = Recipe.query.filter_by(name=recipe).first_or_404()
+    target_ingredient = Ingredient.query.filter_by(name=ingredient).first_or_404()
+    db.session.query(RecipeIngredients).filter(RecipeIngredients.c.ingredient_id == target_ingredient.id and
+                                               RecipeIngredients.c.recipe_id == target_recipe.id).delete(
+        synchronize_session=False)
+    db.session.commit()
+    return redirect(url_for('recipe', name=recipe))
