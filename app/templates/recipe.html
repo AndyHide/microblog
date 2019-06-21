@@ -6,15 +6,17 @@
         <tr>
             <td>
                 <h1>{{ _('Recipe') }}: {{ recipe.name }}</h1>
-                </td>
+            </td>
         </tr>
     </table>
     {{ wtf.quick_form(form) }}
+    <table class="table table-hover">
     {% for ingredient in ingredients %}
         {% include '_ingredient.html' %}
     {% endfor %}
+    </table>
     <nav aria-label="...">
-        <ul class="pager">
+        <ul class="{% if not prev_url and not next_url %}.d-none{% endif %} pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
                     <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}

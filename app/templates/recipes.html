@@ -7,9 +7,11 @@
     {{ wtf.quick_form(form) }}
     <br>
     <h1>{{ _('Here is the list of all recipes in this base:') }}</h1>
+    <table class="table table-hover">
     {% for recipe in recipes %}
         {% include '_recipe.html' %}
     {% endfor %}
+    </table>
     <nav aria-label="...">
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
