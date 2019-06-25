@@ -2,31 +2,31 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <table class="table table-hover">
-        <tr>
-            <td>
-                <h1>{{ _('Recipe') }}: {{ recipe.name }}</h1>
-            </td>
-        </tr>
-    </table>
-    {{ wtf.quick_form(form) }}
-    <table class="table table-hover">
+<table class="table table-hover">
+    <tr>
+        <td>
+            <h1>{{ _('Recipe') }}: {{ recipe.name }}</h1>
+        </td>
+    </tr>
+</table>
+{{ wtf.quick_form(form) }}
+<table class="table table-hover">
     {% for ingredient in ingredients %}
-        {% include '_ingredient.html' %}
+    {% include '_ingredient.html' %}
     {% endfor %}
-    </table>
-    <nav aria-label="...">
-        <ul class="{% if not prev_url and not next_url %}.d-none{% endif %} pager">
-            <li class="previous{% if not prev_url %} disabled{% endif %}">
-                <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
-                </a>
-            </li>
-            <li class="next{% if not next_url %} disabled{% endif %}">
-                <a href="{{ next_url or '#' }}">
-                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+</table>
+<nav aria-label="...">
+    <ul class="{% if not prev_url and not next_url %}.d-none{% endif %} pagination justify-content-center">
+        <li class="page-item{% if not prev_url %} disabled{% endif %}">
+            <a class="page-link" href="{{ prev_url or '#' }}">
+                <span aria-hidden="true">&larr;</span> {{ _('Previous page') }}
+            </a>
+        </li>
+        <li class="page-item{% if not next_url %} disabled{% endif %}">
+            <a class="page-link" href="{{ next_url or '#' }}">
+                {{ _('Next page') }} <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 {% endblock %}
