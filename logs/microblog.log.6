@@ -1,4 +1,5 @@
-2019-06-21 15:23:40,603 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-21 17:26:30,500 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:26:38,111 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,50 +15,11 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 215, in ingredients
-    prev_url=prev_url)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Python\git\microblog\app\templates\ingredients.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Python\git\microblog\app\templates\base.html", line 50, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Python\git\microblog\app\templates\ingredients.html", line 12, in block "app_content"
-    {% include '_ingredient.html' %}
-  File "C:\Python\git\microblog\app\templates\_ingredient.html", line 10, in top-level template code
-    {{ url_for('delete_ingredient', ingredient=ingredient) }}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\werkzeug\routing.py", line 2007, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'delete_ingredient' with values ['ingredient']. Did you mean 'ingredient' instead?
-2019-06-21 15:23:46,558 ERROR: Exception on /recipe/Fried egg [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    entry = db.session.squery(RecipeIngredients).query.filter_by(ingredient_id == target_ingredient.id and
+AttributeError: 'scoped_session' object has no attribute 'squery'
+2019-06-21 17:26:47,654 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:26:52,079 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,59 +35,99 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 266, in recipe
-    next_url=next_url, prev_url=prev_url)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Python\git\microblog\app\templates\recipe.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Python\git\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Python\git\microblog\app\templates\base.html", line 50, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Python\git\microblog\app\templates\recipe.html", line 15, in block "app_content"
-    {% include '_ingredient.html' %}
-  File "C:\Python\git\microblog\app\templates\_ingredient.html", line 8, in top-level template code
-    {{ url_for('delete_ingredient_from_recipe', ingredient=ingredient, recipe=recipe) }}
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\werkzeug\routing.py", line 2007, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'delete_ingredient_from_recipe' with values ['ingredient', 'recipe']. Did you mean 'delete_recipe' instead?
-2019-06-21 15:26:14,729 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 15:26:21,844 ERROR: Exception on /delete_ingredient_from_recipe/<Ingredient 2> [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    entry = db.session.query(RecipeIngredients).query.filter_by(ingredient_id == target_ingredient.id and
+AttributeError: 'BaseQuery' object has no attribute 'query'
+2019-06-21 17:27:06,331 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:27:10,527 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1850, in finalize_request
-    response = self.make_response(rv)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1976, in make_response
-    'The view function did not return a valid response. The'
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2019-06-21 15:27:20,990 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    entry = db.session.query(RecipeIngredients).filter_by(ingredient_id == target_ingredient.id and
+NameError: name 'ingredient_id' is not defined
+2019-06-21 17:28:20,332 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:38:27,653 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:38:34,510 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    entry = db.session.query(RecipeIngredients).filter(ingredient_id == target_ingredient.id and
+NameError: name 'ingredient_id' is not defined
+2019-06-21 17:38:58,416 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:39:02,819 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 310, in delete_ingredient_from_recipe
+    RecipeIngredients.c.recipe_id == target_recipe.id).delete(synchronize_session=False).first()
+AttributeError: 'int' object has no attribute 'first'
+2019-06-21 17:39:26,619 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:39:31,763 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1978, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'int' object has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 311, in delete_ingredient_from_recipe
+    db.session.delete(entry)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1980, in delete
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.int' is not mapped
+2019-06-21 17:39:59,015 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

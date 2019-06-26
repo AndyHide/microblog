@@ -1,8 +1,51 @@
-2019-06-21 15:10:52,985 ERROR: Exception on /delete_recipe/Fried egg [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-21 15:27:24,207 ERROR: Exception on /delete_ingredient/<Ingredient 3> [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\selectable.py", line 61, in _interpret_as_from
-    return insp.selectable
-AttributeError: 'InstanceState' object has no attribute 'selectable'
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-21 15:28:49,867 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:28:52,860 ERROR: Exception on /delete_ingredient/Apple [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-21 15:29:51,707 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:30:12,534 ERROR: Exception on /delete_ingredient_from_recipe/Мойва [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+TypeError: delete_ingredient_from_recipe() missing 1 required positional argument: 'recipe'
+2019-06-21 15:30:38,054 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:34:18,147 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:34:22,115 ERROR: Exception on /delete_ingredient/Apple [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1978, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'str' object has no attribute '_sa_instance_state'
 
 During handling of the above exception, another exception occurred:
 
@@ -21,26 +64,18 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 273, in delete_recipe
-    recipe.clear_ingredients()
-  File "C:\Python\git\microblog\app\models.py", line 41, in clear_ingredients
-    db.delete(ingredient)
-  File "<string>", line 2, in delete
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\dml.py", line 861, in __init__
-    self.table = _interpret_as_from(table)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\selectable.py", line 63, in _interpret_as_from
-    raise exc.ArgumentError("FROM expression expected")
-sqlalchemy.exc.ArgumentError: FROM expression expected
-2019-06-21 15:13:16,903 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 15:14:04,247 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 15:14:07,667 ERROR: Exception on /delete_recipe/Fried egg [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\selectable.py", line 61, in _interpret_as_from
-    return insp.selectable
-AttributeError: 'InstanceState' object has no attribute 'selectable'
-
-During handling of the above exception, another exception occurred:
-
+  File "C:\Python\git\microblog\app\routes.py", line 299, in delete_ingredient
+    db.session.delete(ingredient)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1980, in delete
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.str' is not mapped
+2019-06-21 15:35:10,353 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:41:01,530 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:42:10,521 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:42:54,775 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:42:58,763 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,14 +91,41 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 273, in delete_recipe
-    db.delete(recipe)
-  File "<string>", line 2, in delete
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\dml.py", line 861, in __init__
-    self.table = _interpret_as_from(table)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\selectable.py", line 63, in _interpret_as_from
-    raise exc.ArgumentError("FROM expression expected")
-sqlalchemy.exc.ArgumentError: FROM expression expected
-2019-06-21 15:15:49,583 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 15:16:22,356 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 15:22:24,189 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    target_recipe.ingredients.delete(target_ingredient)
+AttributeError: 'InstrumentedList' object has no attribute 'delete'
+2019-06-21 15:56:16,240 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 15:56:24,679 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Burger [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 308, in delete_ingredient_from_recipe
+    target_recipe.delete_ingredient(ingredient)
+  File "C:\Python\git\microblog\app\models.py", line 38, in delete_ingredient
+    self.ingredients.remove(ingredient)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 1121, in remove
+    __del(self, value, _sa_initiator)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 1094, in __del
+    executor.fire_remove_event(item, _sa_initiator)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 732, in fire_remove_event
+    self.owner_state, self.owner_state.dict, item, initiator
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1172, in fire_remove_event
+    fn(state, value, initiator or self._remove_token)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1491, in emit_backref_from_collection_remove_event
+    instance_state(child),
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2019-06-21 15:57:10,808 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 16:05:04,308 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 16:11:37,541 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
