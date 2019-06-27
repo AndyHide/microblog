@@ -1,4 +1,5 @@
-2019-06-21 16:11:43,449 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-21 17:26:30,500 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:26:38,111 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,10 +16,10 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
-    entry = RecipeIngredients.query.filter_by(recipe_id=target_recipe.id,
-AttributeError: 'Table' object has no attribute 'query'
-2019-06-21 16:13:31,262 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 16:13:40,605 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+    entry = db.session.squery(RecipeIngredients).query.filter_by(ingredient_id == target_ingredient.id and
+AttributeError: 'scoped_session' object has no attribute 'squery'
+2019-06-21 17:26:47,654 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:26:52,079 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -35,10 +36,10 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
-    entry = db.session.query(RecipeIngredient).filter_by(recipe_id=target_recipe.id,
-NameError: name 'RecipeIngredient' is not defined
-2019-06-21 16:16:28,467 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 16:16:35,103 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+    entry = db.session.query(RecipeIngredients).query.filter_by(ingredient_id == target_ingredient.id and
+AttributeError: 'BaseQuery' object has no attribute 'query'
+2019-06-21 17:27:06,331 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:27:10,527 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,20 +56,58 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
-    target_recipe.ingredients.remove(target_ingredient.id)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 1121, in remove
-    __del(self, value, _sa_initiator)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 1094, in __del
-    executor.fire_remove_event(item, _sa_initiator)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\collections.py", line 732, in fire_remove_event
-    self.owner_state, self.owner_state.dict, item, initiator
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1172, in fire_remove_event
-    fn(state, value, initiator or self._remove_token)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1491, in emit_backref_from_collection_remove_event
-    instance_state(child),
+    entry = db.session.query(RecipeIngredients).filter_by(ingredient_id == target_ingredient.id and
+NameError: name 'ingredient_id' is not defined
+2019-06-21 17:28:20,332 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:38:27,653 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:38:34,510 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
+    entry = db.session.query(RecipeIngredients).filter(ingredient_id == target_ingredient.id and
+NameError: name 'ingredient_id' is not defined
+2019-06-21 17:38:58,416 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:39:02,819 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 310, in delete_ingredient_from_recipe
+    RecipeIngredients.c.recipe_id == target_recipe.id).delete(synchronize_session=False).first()
+AttributeError: 'int' object has no attribute 'first'
+2019-06-21 17:39:26,619 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-21 17:39:31,763 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1978, in delete
+    state = attributes.instance_state(instance)
 AttributeError: 'int' object has no attribute '_sa_instance_state'
-2019-06-21 16:42:53,690 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 16:43:01,413 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,47 +124,10 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Python\git\microblog\app\routes.py", line 311, in delete_ingredient_from_recipe
-    d.execute()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\sql\base.py", line 410, in execute
-    raise exc.UnboundExecutionError(msg)
-sqlalchemy.exc.UnboundExecutionError: This None is not directly bound to a Connection or Engine. Use the .execute() method of a Connection or Engine to execute this construct.
-2019-06-21 16:47:41,376 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 16:47:47,349 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
-    entry = db.session.query(RecipeIngredients).filter(recipe_id == target_recipe.id and
-NameError: name 'recipe_id' is not defined
-2019-06-21 17:25:00,923 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-21 17:25:12,681 ERROR: Exception on /delete_ingredient_from_recipe/Apple/Salad [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
-    raise value
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Python\git\microblog\app\routes.py", line 309, in delete_ingredient_from_recipe
-    entry = RecipeIngredients.query.filter_by(ingredient_id == target_ingredient.id and
-AttributeError: 'Table' object has no attribute 'query'
+    db.session.delete(entry)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\sqlalchemy\orm\session.py", line 1980, in delete
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.int' is not mapped
+2019-06-21 17:39:59,015 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

@@ -1,22 +1,35 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
+
 
 {% block app_content %}
-<table class="table table-hover">
-    <tr>
-        <td>
-            <h1>{{ _('Recipe') }}: {{ recipe.name }}</h1>
-        </td>
-    </tr>
-</table>
-{{ wtf.quick_form(form) }}
-<table class="table table-hover">
-    {% for ingredient in ingredients %}
-    {% include '_ingredient.html' %}
-    {% endfor %}
-</table>
+<h1>{{ _('Recipe') }}: {{ recipe.name }}</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="name">{{ form.name.label }}</label>
+                {{ form.name(size=32, class="form-control", id="name") }}
+                {% for error in form.name.errors %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    [{{ error }}]
+                    <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</div>
+{% for ingredient in ingredients %}
+{% include '_ingredient.html' %}
+{% endfor %}
 <nav aria-label="...">
-    <ul class="{% if not prev_url and not next_url %}.d-none{% endif %} pagination justify-content-center">
+    <ul class="pagination">
         <li class="page-item{% if not prev_url %} disabled{% endif %}">
             <a class="page-link" href="{{ prev_url or '#' }}">
                 <span aria-hidden="true">&larr;</span> {{ _('Previous page') }}

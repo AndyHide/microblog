@@ -2,15 +2,8 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<table class="table table-hover">
-    <tr>
-        <td>
-            <h1>{{ _('Ingredient') }}: {{ ingredient.name }}</h1>
-        </td>
-    </tr>
-</table>
+<h1>{{ _('Ingredient') }}: {{ ingredient.name }}</h1>
 {{ _('Используется в рецептах:') }}
-<br>
 {% for recipe in recipes %}
 {% include '_recipe.html' %}
 {% endfor %}
@@ -18,12 +11,12 @@
     <ul class="pagination">
         <li class="page-item{% if not prev_url %} disabled{% endif %}">
             <a class="page-link" href="{{ prev_url or '#' }}">
-                <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                <span aria-hidden="true">&larr;</span> {{ _('Previous page') }}
             </a>
         </li>
         <li class="page-item{% if not next_url %} disabled{% endif %}">
             <a class="page-link" href="{{ next_url or '#' }}">
-                {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                {{ _('Next page') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>
     </ul>

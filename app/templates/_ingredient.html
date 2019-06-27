@@ -1,15 +1,11 @@
-<!--    <table class="table table-hover">-->
-<tr>
-    <td>
-        <a href="{{ url_for('ingredient', name=ingredient.name) }}">{{ ingredient.name }}</a>
-    </td>
-    <td>
+<div class="row">
+    <div class="col-md-4">
         <a href="{% if recipe %}
                              {{ url_for('delete_ingredient_from_recipe', ingredient=ingredient.name, recipe=recipe.name) }}
                          {% else %}
                              {{ url_for('delete_ingredient', ingredient=ingredient.name) }}
                          {% endif %}
-                        ">{{ _('Delete') }}</a>
-    </td>
-</tr>
-<!--    </table>-->
+                        " role="button"><span aria-hidden="true">&times;</span></a>
+        <a href="{{ url_for('ingredient', name=ingredient.name) }}">{{ ingredient.name }}</a>
+    </div>
+</div>

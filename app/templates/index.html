@@ -1,25 +1,45 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
+
 
 {% block app_content %}
 <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
 {% if form %}
-{{ wtf.quick_form(form) }}
-<br>
+<div class="row">
+    <div class="col-md-4">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="post">{{ form.post.label }}</label>
+                {{ form.post(size=32, class="form-control", id="post") }}
+                {% for error in form.post.errors %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    [{{ error }}]
+                    <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</div>
 {% endif %}
 {% for post in posts %}
 {% include '_post.html' %}
 {% endfor %}
 <nav aria-label="...">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination">
         <li class="page-item{% if not prev_url %} disabled{% endif %}">
             <a class="page-link" href="{{ prev_url or '#' }}">
-                <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                <span aria-hidden="true">&larr;</span> {{ _('Previous page') }}
             </a>
         </li>
         <li class="page-item{% if not next_url %} disabled{% endif %}">
             <a class="page-link" href="{{ next_url or '#' }}">
-                {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                {{ _('Next page') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>
     </ul>

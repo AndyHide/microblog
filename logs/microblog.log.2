@@ -1,28 +1,4 @@
-2019-06-26 14:49:08,759 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 14:50:48,946 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 14:50:55,673 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 14:53:04,776 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 14:54:02,753 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 14:56:52,346 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:00:21,364 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:01:16,532 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:02:58,559 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:06:36,939 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:11:14,516 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:35:09,568 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:39:14,149 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:40:39,163 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:42:44,090 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:43:26,325 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:44:33,071 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:47:36,718 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:50:14,522 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:56:03,333 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:57:48,580 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 15:58:42,678 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 16:00:05,353 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 16:00:37,895 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-26 16:00:41,581 ERROR: Exception on /register [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-26 16:01:21,413 ERROR: Exception on /register [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,7 +30,7 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Python\git\microblog\app\templates\register.html", line 45, in template
+  File "C:\Python\git\microblog\app\templates\register.html", line 46, in template
     {% endblock %}
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
@@ -78,14 +54,6 @@ Traceback (most recent call last):
     result = self.subparse(end_tokens)
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 883, in subparse
     rv = self.parse_statement()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 199, in parse_for
-    body = self.parse_statements(('name:endfor', 'name:else'))
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
     self.fail_unknown_tag(token.value, token.lineno)
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
@@ -95,4 +63,3 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
-2019-06-26 16:01:19,410 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
