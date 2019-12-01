@@ -81,7 +81,10 @@ class IngredientForm(FlaskForm):
 
 
 class IngredientInRecipeForm(FlaskForm):
-    name = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
+    isBreakfast = BooleanField(_l('Завтрак'))
+    isLunch = BooleanField(_l('Обед'))
+    isDinner = BooleanField(_l('Ужин'))
+    name = StringField(_l('Here you can add new ingredient'))
     submit = SubmitField(_l('Submit'))
 
 

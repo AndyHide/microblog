@@ -241,20 +241,24 @@ def recipes():
 @login_required
 def recipe(name):
     recipe = Recipe.query.filter_by(name=name).first_or_404()
-    form = IngredientInRecipeForm()
+    form = IngredientInRecipeForm(isBreakfast=recipe.isBreakfast, isLunch=recipe.isLunch, isDinner=recipe.isDinner)
     if form.validate_on_submit():
-        ingredient = Ingredient.query.filter_by(name=form.name.data).first()
-        if ingredient is None:
-            flash(_('Ingredient is not found'))
-            return redirect(url_for('recipe', name=name))
-        if ingredient in recipe.find_ingredients():
-            flash(_('Ingredient is already in this recipe'))
-            return redirect(url_for('recipe', name=name))
-        else:
-            recipe.ingredients.append(ingredient)
-            db.session.commit()
-            flash(_('Ingredient added!'))
-            return redirect(url_for('recipe', name=name))
+        if form.name.data:
+            ingredient = Ingredient.query.filter_by(name=form.name.data).first()
+            if ingredient is None:
+                flash(_('Ingredient is not found'))
+                return redirect(url_for('recipe', name=name))
+            if ingredient in recipe.find_ingredients():
+                flash(_('Ingredient is already in this recipe'))
+                return redirect(url_for('recipe', name=name))
+            else:
+                recipe.ingredients.append(ingredient)
+        recipe.isBreakfast = form.isBreakfast.data
+        recipe.isLunch = form.isLunch.data
+        recipe.isDinner = form.isDinner.data
+        db.session.commit()
+        flash(_('Изменения сохранены!'))
+        return redirect(url_for('recipe', name=name))
     page = request.args.get('page', 1, type=int)
     ingredients = recipe.find_ingredients().paginate(
         page, app.config['POSTS_PER_PAGE'], False)

@@ -19,12 +19,23 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="form-group form-check">
+                {{ form.isBreakfast(class="form-check-input", id="isBreakfast", type="checkbox") }}
+                <label class="form-check-label" for="isBreakfast">{{ form.isBreakfast.label }}</label>
+                <br>
+                {{ form.isLunch(class="form-check-input", id="isLunch", type="checkbox") }}
+                <label class="form-check-label" for="isLunch">{{ form.isLunch.label }}</label>
+                <br>
+                {{ form.isDinner(class="form-check-input", id="isDinner", type="checkbox") }}
+                <label class="form-check-label" for="isDinner">{{ form.isDinner.label }}</label>
+            </div>
             <div class="form-group">
                 {{ form.submit(class="btn btn-primary") }}
             </div>
         </form>
     </div>
 </div>
+
 {% for ingredient in ingredients %}
 {% include '_ingredient.html' %}
 {% endfor %}

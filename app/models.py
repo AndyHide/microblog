@@ -26,6 +26,9 @@ class Recipe(db.Model):
     name = db.Column(db.String(64), index=True, unique=True)
     ingredients = db.relationship('Ingredient', secondary='RecipeIngredients',
                                   backref=db.backref('used_in', lazy='dynamic'))
+    isBreakfast = db.Column(db.Boolean, index=True)
+    isLunch = db.Column(db.Boolean, index=True)
+    isDinner = db.Column(db.Boolean, index=True)
 
     def find_ingredients(self):
         ingredients = Ingredient.query.join(
