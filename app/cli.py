@@ -1,6 +1,5 @@
-import os
-
 import click
+import os
 
 from app import app
 

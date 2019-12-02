@@ -1,9 +1,8 @@
+import jwt
 from datetime import datetime
+from flask_login import UserMixin
 from hashlib import md5
 from time import time
-
-import jwt
-from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import app, db, login

@@ -1,7 +1,5 @@
 import logging
 import os
-from logging.handlers import SMTPHandler, RotatingFileHandler
-
 from flask import Flask, request
 from flask_babel import Babel, lazy_gettext as _l
 from flask_bootstrap import Bootstrap
@@ -10,6 +8,7 @@ from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from logging.handlers import SMTPHandler, RotatingFileHandler
 
 from config import Config
 

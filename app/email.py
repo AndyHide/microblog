@@ -1,8 +1,7 @@
-from threading import Thread
-
 from flask import render_template
 from flask_babel import _
 from flask_mail import Message
+from threading import Thread
 
 from app import app, mail
 
