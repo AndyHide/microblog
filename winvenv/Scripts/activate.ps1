@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="c:\python\git\microblog\winvenv"
+$env:VIRTUAL_ENV="C:\Python\git\microblog\winvenv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name
