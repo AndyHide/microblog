@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+<h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+<h1>{{ _('Вот меню на неделю:') }}</h1>
+
+<table class="table table-striped table-responsive">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Завтрак</th>
+      <th scope="col">Обед</th>
+      <th scope="col">Ужин</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for day in mealplan.days %}
+    <tr>
+      <th scope="row">{{ day.name }}</th>
+      <td>{{ day.breakfast.name }}</td>
+      <td>{{ day.lunch.name }}</td>
+      <td>{{ day.dinner.name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

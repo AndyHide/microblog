@@ -3,12 +3,14 @@ from flask import render_template, flash, redirect, url_for, request, g
 from flask_babel import _, get_locale
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
+from random import shuffle
 
 from app import app, db
 from app.email import send_password_reset_email
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, IngredientForm, RecipeForm, IngredientInRecipeForm
 from app.models import User, Post, Ingredient, Recipe, RecipeIngredients
+from app.classes import Mealplan
 
 
 @app.before_request
@@ -314,3 +316,35 @@ def delete_ingredient_from_recipe(ingredient, recipe):
         synchronize_session=False)
     db.session.commit()
     return redirect(url_for('recipe', name=recipe))
+
+
+@app.route('/mealplan', methods=['GET', 'POST'])
+@login_required
+def mealplan():
+    mealplan = Mealplan()
+    breakfast_recipes = Recipe.query.filter_by(isBreakfast=True).all()
+    lunch_recipes = Recipe.query.filter_by(isLunch=True).all()
+    dinner_recipes = Recipe.query.filter_by(isDinner=True).all()
+
+    shuffle(breakfast_recipes)
+    shuffle(lunch_recipes)
+    shuffle(dinner_recipes)
+
+    breakfast_recipes = breakfast_recipes[:5]
+    lunch_recipes = lunch_recipes[:5]
+    dinner_recipes = dinner_recipes[:5]
+
+    print(breakfast_recipes)
+
+    for day in mealplan.days:
+        day.breakfast = breakfast_recipes.pop()
+        day.lunch = lunch_recipes.pop()
+        day.dinner = dinner_recipes.pop()
+
+    for day in mealplan.days:
+        print(day.name)
+        print(day.breakfast)
+        print(day.lunch)
+        print(day.dinner)
+
+    return render_template('mealplan.html', mealplan=mealplan)

@@ -1,83 +1,137 @@
-2019-11-24 15:58:21,528 ERROR: Exception on /recipe/Vatrushka [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
+2019-12-03 13:02:30,663 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
-    value = _strict_as_bool(value)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
-    raise TypeError("Not a boolean value: %r" % value)
-TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 36, in reraise
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
     raise value
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\python\git\microblog\app\routes.py", line 258, in recipe
-    db.session.commit()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 1026, in commit
-    self.transaction.commit()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 493, in commit
-    self._prepare_impl()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 472, in _prepare_impl
-    self.session.flush()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2458, in flush
-    self._flush(objects)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2596, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+  File "C:\Python\git\microblog\app\routes.py", line 323, in mealplan
+    breakfast_recipes = Recipe.query.filter_by(isBreakfast)
+NameError: name 'isBreakfast' is not defined
+2019-12-03 13:04:01,863 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:17:55,903 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:18:14,769 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:18:28,594 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:18:38,209 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:23:53,545 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:24:04,496 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:27:07,988 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:27:11,883 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
     raise value
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2556, in _flush
-    flush_context.execute()
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
-    update,
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\persistence.py", line 978, in _emit_update_statements
-    statement, multiparams
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    e, util.text_type(statement), parameters, None, None
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
-    value = _strict_as_bool(value)
-  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
-    raise TypeError("Not a boolean value: %r" % value)
-sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
-[SQL: UPDATE recipe SET "isBreakfast"=? WHERE recipe.id = ?]
-[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>, 'recipe_id': 5}]]
-2019-11-24 16:00:09,497 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 337, in mealplan
+    breakfast_recipes = shuffle(Recipe.query.filter_by(isBreakfast=True))
+  File "C:\Python\lib\random.py", line 271, in shuffle
+    for i in reversed(range(1, len(x))):
+TypeError: object of type 'BaseQuery' has no len()
+2019-12-03 13:28:17,058 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:28:27,732 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:28:32,414 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 341, in mealplan
+    print(choice(lunch_recipes))
+  File "C:\Python\lib\random.py", line 255, in choice
+    i = self._randbelow(len(seq))
+TypeError: object of type 'BaseQuery' has no len()
+2019-12-03 13:31:30,183 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:31:34,251 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 340, in mealplan
+    print(choice(lunch_recipes))
+NameError: name 'choice' is not defined
+2019-12-03 13:31:53,313 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:40:55,787 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:40:59,874 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 337, in mealplan
+    breakfast_recipes = shuffle(Recipe.query.filter_by(isBreakfast=True).all())[:5]
+TypeError: 'NoneType' object is not subscriptable
+2019-12-03 13:41:43,803 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:41:48,569 ERROR: Exception on /mealplan [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 342, in mealplan
+    day.breakfast = breakfast_recipes.pop()
+AttributeError: 'NoneType' object has no attribute 'pop'
+2019-12-03 13:42:29,178 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:42:51,469 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:46:55,706 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:47:45,039 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 13:48:34,135 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]

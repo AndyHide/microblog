@@ -26,6 +26,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ url_for('explore') }}">{{ _('Лента') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url_for('ingredients') }}">{{ _('Ингредиенты') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url_for('recipes') }}">{{ _('Блюда') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('mealplan') }}">{{ _('Меню на неделю') }}</a></li>
         </ul>
         <ul class="nav navbar-nav ml-auto">
             {% if current_user.is_anonymous %}
