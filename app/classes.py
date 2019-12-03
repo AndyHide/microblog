@@ -8,4 +8,4 @@ class Day:
 
 class Mealplan:
     def __init__(self):
-        self.days = [Day('Monday'), Day('Tuesday'), Day('Wednesday'), Day('Thursday'), Day('Friday')]
+        self.days = [Day('пн'), Day('вт'), Day('ср'), Day('чт'), Day('пт')]

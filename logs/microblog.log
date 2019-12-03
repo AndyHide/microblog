@@ -122,3 +122,6 @@ jinja2.exceptions.TemplateSyntaxError: unexpected '/'
 2019-12-03 14:11:40,919 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
 2019-12-03 14:12:41,932 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
 2019-12-03 14:13:26,969 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 14:21:33,928 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 14:33:32,930 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 14:35:40,215 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
