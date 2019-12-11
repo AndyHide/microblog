@@ -1,23 +1,17 @@
-2019-06-27 10:55:05,037 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-27 10:56:15,918 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-06-27 10:57:15,486 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
-2019-08-11 17:56:08,199 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:05:02,527 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:05:11,865 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:15:39,961 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:19:13,724 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:19:30,415 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 18:22:22,983 INFO: Microblog startup [in C:\pandachef\microblog\app\__init__.py:54]
-2019-08-11 19:16:11,144 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-19 22:55:22,720 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-19 23:08:37,208 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-19 23:12:32,090 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-19 23:16:49,355 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-24 15:48:11,140 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-24 15:54:07,171 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-24 15:54:51,441 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-24 15:56:40,792 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
-2019-11-24 15:56:45,551 ERROR: Exception on /recipe/Пирожок с олениной [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
+2019-11-24 15:57:35,968 ERROR: Exception on /recipe/Пирожок с олениной [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
+    value = _strict_as_bool(value)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000002C0BF24BAC8>
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,7 +27,56 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\python\git\microblog\app\routes.py", line 256, in recipe
-    isBreakfast = form.name.isBreakfast
-AttributeError: 'StringField' object has no attribute 'isBreakfast'
-2019-11-24 15:57:32,797 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+  File "C:\python\git\microblog\app\routes.py", line 258, in recipe
+    db.session.commit()
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 1026, in commit
+    self.transaction.commit()
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 493, in commit
+    self._prepare_impl()
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2458, in flush
+    self._flush(objects)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2596, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+    raise value
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\session.py", line 2556, in _flush
+    flush_context.execute()
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\persistence.py", line 978, in _emit_update_statements
+    statement, multiparams
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    e, util.text_type(statement), parameters, None, None
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 717, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
+    value = _strict_as_bool(value)
+  File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000002C0BF24BAC8>
+[SQL: UPDATE recipe SET "isBreakfast"=? WHERE recipe.id = ?]
+[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x000002C0BF24BAC8>, 'recipe_id': 6}]]

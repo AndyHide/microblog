@@ -5,25 +5,42 @@
 <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
 <h1>{{ _('Вот меню на неделю:') }}</h1>
 
-<table class="table table-striped table-responsive-sm">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Завтрак</th>
-      <th scope="col">Обед</th>
-      <th scope="col">Ужин</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
     {% for day in mealplan.days %}
-    <tr>
-      <th scope="row">{{ day.name }}</th>
-        <td><a href="{{ url_for('recipe', name=day.breakfast.name) }}">{{ day.breakfast.name }}</a></td>
-        <td><a href="{{ url_for('recipe', name=day.lunch.name) }}">{{ day.lunch.name }}</a></td>
-        <td><a href="{{ url_for('recipe', name=day.dinner.name) }}">{{ day.dinner.name }}</a></td>
-    </tr>
+    <div class="row">
+        <div class="col-sm-1"><h5>{{ day.name }}</h5></div>
+        <div class="col-sm">
+            <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
+            <div class="card">
+                <img src="/static/panda1.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ day.breakfast.name }}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
+            <div class="card">
+                <img src="/static/panda2.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ day.lunch.name }}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
+            <div class="card">
+                <img src="/static/panda3.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ day.dinner.name }}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
     {% endfor %}
-  </tbody>
-</table>
+</div>
 
 {% endblock %}

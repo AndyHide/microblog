@@ -1,4 +1,4 @@
-2019-11-24 15:57:41,198 ERROR: Exception on /recipe/Пирожок с олениной [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
+2019-11-24 15:58:21,528 ERROR: Exception on /recipe/Vatrushka [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
     context = constructor(dialect, self, conn, *args)
@@ -8,7 +8,7 @@ Traceback (most recent call last):
     value = _strict_as_bool(value)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
     raise TypeError("Not a boolean value: %r" % value)
-TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000002C0BF4E64A8>
+TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
 
 The above exception was the direct cause of the following exception:
 
@@ -77,7 +77,7 @@ Traceback (most recent call last):
     value = _strict_as_bool(value)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
     raise TypeError("Not a boolean value: %r" % value)
-sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000002C0BF4E64A8>
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
 [SQL: UPDATE recipe SET "isBreakfast"=? WHERE recipe.id = ?]
-[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x000002C0BF4E64A8>, 'recipe_id': 6}]]
-2019-11-24 15:58:15,923 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>, 'recipe_id': 5}]]
+2019-11-24 16:00:09,497 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]

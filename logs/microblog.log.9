@@ -1,4 +1,4 @@
-2019-06-26 16:01:21,413 ERROR: Exception on /register [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+2019-06-26 16:01:24,981 ERROR: Exception on /register [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -63,3 +63,64 @@ Traceback (most recent call last):
   File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2019-06-26 16:02:10,358 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-26 16:05:56,166 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-26 16:06:21,037 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-26 16:11:10,918 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-26 16:15:51,736 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-26 16:20:29,069 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 09:55:14,618 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 09:55:18,446 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 09:56:49,716 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 09:58:29,183 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 09:59:04,919 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:00:12,715 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:03:46,110 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:03:48,374 ERROR: Exception on /ingredients [GET] [in c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Python\git\microblog\app\routes.py", line 215, in ingredients
+    prev_url=prev_url)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python\git\microblog\winvenv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python\git\microblog\app\templates\ingredients.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Python\git\microblog\app\templates\base.html", line 51, in top-level template code
+    {% block app_content %}{% endblock %}
+  File "C:\Python\git\microblog\app\templates\ingredients.html", line 13, in block "app_content"
+    {{ form.username(size=32, class="form-control", id="name") }}
+jinja2.exceptions.UndefinedError: 'app.forms.IngredientForm object' has no attribute 'username'
+2019-06-27 10:04:09,856 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:04:46,279 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:06:23,010 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:07:44,251 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:09:26,270 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:11:36,676 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:17:22,275 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:30:14,988 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:46:46,755 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:49:00,171 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-06-27 10:52:30,335 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]

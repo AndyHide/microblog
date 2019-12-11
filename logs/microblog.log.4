@@ -1,4 +1,4 @@
-2019-11-24 15:58:21,528 ERROR: Exception on /recipe/Vatrushka [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
+2019-11-24 16:00:14,463 ERROR: Exception on /recipe/Salad [POST] [in c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
     context = constructor(dialect, self, conn, *args)
@@ -8,7 +8,7 @@ Traceback (most recent call last):
     value = _strict_as_bool(value)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
     raise TypeError("Not a boolean value: %r" % value)
-TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
+TypeError: Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000001F357806940>
 
 The above exception was the direct cause of the following exception:
 
@@ -27,7 +27,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\python\git\microblog\app\routes.py", line 258, in recipe
+  File "C:\python\git\microblog\app\routes.py", line 257, in recipe
     db.session.commit()
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
     return getattr(self.registry(), name)(*args, **kwargs)
@@ -77,7 +77,35 @@ Traceback (most recent call last):
     value = _strict_as_bool(value)
   File "c:\users\andy\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
     raise TypeError("Not a boolean value: %r" % value)
-sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: <wtforms.fields.core.BooleanField object at 0x000001F357806940>
 [SQL: UPDATE recipe SET "isBreakfast"=? WHERE recipe.id = ?]
-[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x0000023DFB36F668>, 'recipe_id': 5}]]
-2019-11-24 16:00:09,497 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+[parameters: [{'isBreakfast': <wtforms.fields.core.BooleanField object at 0x000001F357806940>, 'recipe_id': 10}]]
+2019-11-24 16:10:16,411 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:12:09,603 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:14:56,678 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:17:21,217 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:18:29,372 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:20:30,029 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:30:16,728 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 16:34:33,509 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:16:20,087 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:18:12,368 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:19:26,927 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:20:15,086 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:20:40,402 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:22:51,339 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:23:45,662 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:24:28,786 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:26:17,798 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:27:33,871 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:28:38,269 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:30:19,542 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:32:19,915 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:41:14,756 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-11-24 19:42:21,822 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-12-02 16:48:20,882 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:54]
+2019-12-02 20:40:50,650 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:54]
+2019-12-03 10:34:29,770 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 12:03:21,815 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 12:04:58,131 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-03 12:09:10,466 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]

@@ -334,17 +334,17 @@ def mealplan():
     lunch_recipes = lunch_recipes[:5]
     dinner_recipes = dinner_recipes[:5]
 
-    print(breakfast_recipes)
+    """print(breakfast_recipes)"""
 
     for day in mealplan.days:
         day.breakfast = breakfast_recipes.pop()
         day.lunch = lunch_recipes.pop()
         day.dinner = dinner_recipes.pop()
 
-    for day in mealplan.days:
+    """for day in mealplan.days:
         print(day.name)
         print(day.breakfast)
         print(day.lunch)
-        print(day.dinner)
+        print(day.dinner)"""
 
     return render_template('mealplan.html', mealplan=mealplan)
