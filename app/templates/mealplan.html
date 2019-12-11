@@ -8,35 +8,38 @@
 <div class="container">
     {% for day in mealplan.days %}
     <div class="row">
-        <div class="col"><h5 class="text-center">{{ day.name }}</h5></div>
+        <div class="col-md bg-info"><h1 class="text-center">{{ day.name }}</h1></div>
     </div>
     <div class="row">
-        <div class="col-4">
+        <div class="col-sm-4">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
-                <img src="/static/panda1.jpg" class="card-img-top">
+                <img src="/static/744818.jpg" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ day.breakfast.name }}</h5>
+                    <div class="d-none d-md-block"><h5 class="card-title">{{ day.breakfast.name }}</h5></div>
+                    <div class="d-md-none"><p class="card-text">{{ day.breakfast.name }}</p></div>
                 </div>
             </div>
             </a>
         </div>
-        <div class="col-4">
+        <div class="col-sm-4">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
-                <img src="/static/panda2.jpg" class="card-img-top">
+                <img src="/static/3638637.jpg" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ day.lunch.name }}</h5>
+                    <div class="d-none d-md-block"><h5 class="card-title">{{ day.lunch.name }}</h5></div>
+                    <div class="d-md-none"><p class="card-text">{{ day.lunch.name }}</p></div>
                 </div>
             </div>
             </a>
         </div>
-        <div class="col-4">
+        <div class="col-sm-4">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
-                <img src="/static/panda3.jpg" class="card-img-top">
+                <img src="/static/6072275.jpg" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ day.dinner.name }}</h5>
+                    <div class="d-none d-md-block"><h5 class="card-title">{{ day.dinner.name }}</h5></div>
+                    <div class="d-md-none"><p class="card-text">{{ day.dinner.name }}</p></div>
                 </div>
             </div>
             </a>
