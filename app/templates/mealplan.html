@@ -54,30 +54,35 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-              <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
+
                 <div class="carousel-item active">
+                    <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
                   <img class="d-block w-100" src="/static/744818.jpg" alt="">
                     <div class="carousel-caption">
                         <p>{{ day.breakfast.name }}</p>
                     </div>
+                    </a>
                 </div>
-              </a>
-              <a href="{{ url_for('recipe', name=day.dinner.name) }}">
+
+
                 <div class="carousel-item">
+                    <a href="{{ url_for('recipe', name=day.dinner.name) }}">
                   <img class="d-block w-100" src="/static/3638637.jpg" alt="">
                     <div class="carousel-caption">
                         <p>{{ day.lunch.name }}</p>
                     </div>
+                    </a>
                 </div>
-              </a>
-              <a href="{{ url_for('recipe', name=day.dinner.name) }}">
+
+
                 <div class="carousel-item">
+                    <a href="{{ url_for('recipe', name=day.dinner.name) }}">
                   <img class="d-block w-100" src="/static/6072275.jpg" alt="">
                     <div class="carousel-caption">
                         <p>{{ day.dinner.name }}</p>
                     </div>
+                    </a>
                 </div>
-              </a>
           </div>
         </div>
     </div>
