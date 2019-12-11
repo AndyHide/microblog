@@ -2,7 +2,6 @@
 
 
 {% block app_content %}
-<h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
 <div class="row">
     <div class="col-md-4">
         <form action="" method="post" novalidate>
@@ -25,7 +24,7 @@
         </form>
     </div>
 </div>
-<h1>{{ _('Here is the list of all ingredients in this base:') }}</h1>
+<h1>{{ _('Список ингредиентов в базе:') }}</h1>
 {% for ingredient in ingredients %}
 {% include '_ingredient.html' %}
 {% endfor %}

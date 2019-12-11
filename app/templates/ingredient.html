@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>{{ _('Ingredient') }}: {{ ingredient.name }}</h1>
+<h1>{{ ingredient.name }}</h1>
 {{ _('Используется в рецептах:') }}
 {% for recipe in recipes %}
 {% include '_recipe.html' %}

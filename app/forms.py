@@ -71,20 +71,20 @@ class PostForm(FlaskForm):
 
 
 class IngredientForm(FlaskForm):
-    name = StringField(_l('Here you can add new ingredient'), validators=[DataRequired()])
+    name = StringField(_l('Добавить новый ингредиент:'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
     def validate_name(self, name):
         ingredient = Ingredient.query.filter_by(name=name.data).first()
         if ingredient is not None:
-            raise ValidationError(_('This ingredient is already present.'))
+            raise ValidationError(_('Этот ингредиент уже есть в базе.'))
 
 
 class IngredientInRecipeForm(FlaskForm):
     isBreakfast = BooleanField(_l('Завтрак'))
     isLunch = BooleanField(_l('Обед'))
     isDinner = BooleanField(_l('Ужин'))
-    name = StringField(_l('Here you can add new ingredient'))
+    name = StringField(_l('Добавить новый ингредиент:'))
     submit = SubmitField(_l('Submit'))
 
 
