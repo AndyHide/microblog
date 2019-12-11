@@ -1,91 +1,90 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
-<h1>{{ _('Вот меню на неделю:') }}</h1>
+<br>
+<h3>{{ _('Вот меню на неделю:') }}</h3>
+<br>
 
 <div class="container">
     {% for day in mealplan.days %}
     <div class="row">
         <div class="col bg-info"><h3 class="text-center">{{ day.name }}</h3></div>
     </div>
+    <br>
     <div class="d-none d-md-block">
         <div class="row">
             <div class="col-sm-4">
                 <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
-                <div class="card">
-                    <img src="/static/744818.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <div class="d-none d-md-block"><h3 class="card-title">{{ day.breakfast.name }}</h3></div>
-                        <div class="d-md-none"><h5 class="card-text">{{ day.breakfast.name }}</h5></div>
+                    <div class="card">
+                        <img class="card-img-top" src="/static/744818.jpg">
+                        <div class="card-body">
+                            <div class="d-none d-lg-block"><h5 class="card-title">{{ day.breakfast.name }}</h5></div>
+                            <div class="d-lg-none"><p class="card-text">{{ day.breakfast.name }}</p></div>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-sm-4">
                 <a href="{{ url_for('recipe', name=day.lunch.name) }}">
-                <div class="card">
-                    <img src="/static/3638637.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <div class="d-none d-md-block"><h3 class="card-title">{{ day.lunch.name }}</h3></div>
-                        <div class="d-md-none"><h5 class="card-text">{{ day.lunch.name }}</h5></div>
+                    <div class="card">
+                        <img class="card-img-top" src="/static/3638637.jpg">
+                        <div class="card-body">
+                            <div class="d-none d-lg-block"><h5 class="card-title">{{ day.lunch.name }}</h5></div>
+                            <div class="d-lg-none"><p class="card-text">{{ day.lunch.name }}</p></div>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-sm-4">
                 <a href="{{ url_for('recipe', name=day.dinner.name) }}">
-                <div class="card">
-                    <img src="/static/6072275.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <div class="d-none d-md-block"><h3 class="card-title">{{ day.dinner.name }}</h3></div>
-                        <div class="d-md-none"><h5 class="card-text">{{ day.dinner.name }}</h5></div>
+                    <div class="card">
+                        <img class="card-img-top" src="/static/6072275.jpg">
+                        <div class="card-body">
+                            <div class="d-none d-lg-block"><h5 class="card-title">{{ day.dinner.name }}</h5></div>
+                            <div class="d-lg-none"><p class="card-text">{{ day.dinner.name }}</p></div>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
         </div>
     </div>
-    <div class="d-md-none">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
 
+    <div class="d-md-none">
+        <div class="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
+                <li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
+                <li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
+            </ol>
+            <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
-                  <img class="d-block w-100" src="/static/744818.jpg" alt="">
-                    <div class="carousel-caption">
-                        <p>{{ day.breakfast.name }}</p>
-                    </div>
+                        <img alt="" class="d-block w-100" src="/static/744818.jpg">
+                        <div class="carousel-caption">
+                            <p>{{ day.breakfast.name }}</p>
+                        </div>
                     </a>
                 </div>
-
-
                 <div class="carousel-item">
                     <a href="{{ url_for('recipe', name=day.dinner.name) }}">
-                  <img class="d-block w-100" src="/static/3638637.jpg" alt="">
-                    <div class="carousel-caption">
-                        <p>{{ day.lunch.name }}</p>
-                    </div>
+                        <img alt="" class="d-block w-100" src="/static/3638637.jpg">
+                        <div class="carousel-caption">
+                            <p>{{ day.lunch.name }}</p>
+                        </div>
                     </a>
                 </div>
-
-
                 <div class="carousel-item">
                     <a href="{{ url_for('recipe', name=day.dinner.name) }}">
-                  <img class="d-block w-100" src="/static/6072275.jpg" alt="">
-                    <div class="carousel-caption">
-                        <p>{{ day.dinner.name }}</p>
-                    </div>
+                        <img alt="" class="d-block w-100" src="/static/6072275.jpg">
+                        <div class="carousel-caption">
+                            <p>{{ day.dinner.name }}</p>
+                        </div>
                     </a>
                 </div>
-          </div>
+            </div>
         </div>
     </div>
+    <br>
     {% endfor %}
 </div>
 
