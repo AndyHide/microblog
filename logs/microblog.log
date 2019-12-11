@@ -73,3 +73,6 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You p
 2019-12-11 12:31:42,691 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
 2019-12-11 12:38:33,918 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
 2019-12-11 12:39:28,335 INFO: Microblog startup [in C:\Python\git\microblog\app\__init__.py:53]
+2019-12-11 20:48:09,771 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:53]
+2019-12-11 20:52:37,437 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:53]
+2019-12-11 20:53:28,914 INFO: Microblog startup [in C:\python\git\microblog\app\__init__.py:53]

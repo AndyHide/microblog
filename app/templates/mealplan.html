@@ -8,8 +8,8 @@
 <div class="container">
     {% for day in mealplan.days %}
     <div class="row">
-        <div class="col-sm-1"><h5>{{ day.name }}</h5></div>
-        <div class="col-sm">
+        <div class="col-1"><h5>{{ day.name }}</h5></div>
+        <div class="col-3">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
                 <img src="/static/panda1.jpg" class="card-img-top">
@@ -19,7 +19,7 @@
             </div>
             </a>
         </div>
-        <div class="col-sm">
+        <div class="col-3">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
                 <img src="/static/panda2.jpg" class="card-img-top">
@@ -29,7 +29,7 @@
             </div>
             </a>
         </div>
-        <div class="col-sm">
+        <div class="col-3">
             <a href="{{ url_for('recipe', name=day.breakfast.name) }}">
             <div class="card">
                 <img src="/static/panda3.jpg" class="card-img-top">
